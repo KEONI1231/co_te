@@ -22,13 +22,13 @@ def bfs(x,y):
             ny = y + dy[i]
             
             if nx < 0 or nx>= n or ny < 0 or ny >= m:
-                print(str(nx) + " : " + str(ny) + ": case1" + " : " + str(graph[nx][ny]))
+                #print(str(nx) + " : " + str(ny) + ": case1" + " : " + str(graph[nx][ny]))
                 continue
             if graph[nx][ny] == 0:
-                print(str(nx) + " : " + str(ny) + ": case2"+ " : " + str(graph[nx][ny]))
+                #print(str(nx) + " : " + str(ny) + ": case2"+ " : " + str(graph[nx][ny]))
                 continue
             if graph[nx][ny] == 1:
-                print(str(nx) + " : " + str(ny) + ": case3"+ " : " + str(graph[nx][ny]))
+                #print(str(nx) + " : " + str(ny) + ": case3"+ " : " + str(graph[nx][ny]))
                 graph[nx][ny] = graph[x][y] + 1
                 queue.append((nx,ny))
 
