@@ -1,41 +1,32 @@
-# 다시풀기
-
-
+#촌수 계산
 from collections import deque
 
-n = int(input())
-x, y = map(int, input().split())
-m = int(input())
-graph = [[] * n for _ in range(n + 1)]
+n = int(input()) #사람수
+a,b = map(int,input().split()) #계산해야 할 촌수
+m = int(input()) #관계의 수
+graph = [[] * n for _ in range(n+1)]
+visit = [False] * (n+1)
+result = [False] * (n+1)
+
 for i in range(m):
-    a, b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
+    x,y = map(int,input().split())
+    graph[x].append(y)
+    graph[y].append(x)
 
-visited = [False] * (n + 1)
-result = [0 for _ in range(n + 1)]
-cnt = 0;
-
-
-def bfs(x):
-    global cnt
+def bfs(a):
     que = deque()
-    que.append(x)
-    visited[x] = True
-
+    que.append(a)
+    visit[a] = True
     while que:
-        a1 = que.popleft()
-        for i in graph[a1]:
-            if (visited[i] == False):
+        node = que.popleft()
+        for i in graph[node]:
+            if(visit[i] == False):
                 que.append(i)
-                visited[i] = True
-                result[i] = result[a1] + 1
+                visit[i] = True
+                result[i] = result[node] + 1
 
-
-bfs(x)
-
-if (result[y] != 0):
-    print(result[y])
-
-else:
-    print("-1")
+bfs(a)
+if(result[b] != 0):
+    print(result[b])
+else :
+    print(-1)
