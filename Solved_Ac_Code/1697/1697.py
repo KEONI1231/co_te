@@ -1,14 +1,10 @@
 from collections import deque
+
 a,b = map(int, input().split())
+max = 10**5
+result = [0] * (max)
 
-cnt = 0
-direction = [0,-1,1,2]
-
-def bfs(x):
-    global cnt
+def bfs():
     que = deque()
-    que.append(x)
-    while que:
-       pass
-bfs(a)
-print(cnt)
+    que.append(a)
+
