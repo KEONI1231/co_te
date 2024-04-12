@@ -51,6 +51,6 @@ graph = [
     [1, 7],
 ]
 
-print(len(graph))
+
 
 dfs_stack(graph, 1)
