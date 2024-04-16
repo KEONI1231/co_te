@@ -50,7 +50,4 @@ graph = [
     [2, 6, 8],
     [1, 7],
 ]
-
-
-
 dfs_stack(graph, 1)

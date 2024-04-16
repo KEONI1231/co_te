@@ -12,8 +12,10 @@ def dfs(x, y) :
         dfs(x, y - 1)
         dfs(x + 1, y)
         dfs(x, y + 1)
+
         return True
     return False
+
 n, m = map(int, input().split())
 
 graph = []
@@ -27,4 +29,5 @@ for i in range(n):
         # 현재 위치에서 DFS 수행
         if dfs(i, j) == True :
             result += 1
+
 print(result)
