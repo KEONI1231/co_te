@@ -12,7 +12,7 @@ def bfs(start, visited):
                 queue.append(i)
                 visited[i] = True
 
-cnt = 0;
+cnt = 0
 computer_cnt = int(input())
 network_cnt = int(input())
 graph = [[] for _ in range(computer_cnt+1)]
